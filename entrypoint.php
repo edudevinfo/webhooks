@@ -1,5 +1,7 @@
 <?php
 
-file_put_contents('webhook.log', json_decode($_POST), true);
+file_put_contents('webhook.log', $_POST);
 
-exec("git pull");
+$var = exec("git pull");
+
+file_put_contents('exec.log', $var);
